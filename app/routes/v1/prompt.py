@@ -1,7 +1,8 @@
 # app/api/v1/endpoints/users.py
 from fastapi import APIRouter, HTTPException, status
-
 router = APIRouter()
+
+
 
 @router.get("/", status_code=status.HTTP_200_OK)
 async def get_all_prompts():

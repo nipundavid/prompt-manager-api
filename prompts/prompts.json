@@ -1,0 +1,22 @@
+[
+    {
+        "title": "SQL Generation",
+        "content": "Generates SQL query based on the input prompt",
+        "category": "dev"
+    },
+    {
+        "title": "Comments Generation",
+        "content": "Generates comments based on the code flow",
+        "category": "dev"
+    },
+    {
+        "title": "Knock Knock Jokes",
+        "content": "Generates knock knock jokes based on the input prompt",
+        "category": "fun"
+    },
+    {
+        "title": "The Blog Master Prompt",
+        "content": "As an experienced and insightful blog writer, you are tasked with creating a comprehensive and engaging blog post on {topic_name} specifically tailored for {target_audience}. This audience consists of {target_audience}.Conduct thorough research on {topic_name}, including {specific_research_area}, to ensure your blog post is accurate, informative, and up-to-date.The blog post should be a minimum of {word_count} words and should be divided into clear and concise sections with relevant headings and subheadings to enhance readability and improve the overall user experience.Key Considerations:    - Target Audience: Tailor your writing style, tone, and vocabulary to effectively communicate with the specified target audience.    - Value Proposition: Clearly articulate the value that readers will gain from reading your blog post. What key insights, practical tips, or valuable information will they learn?    - SEO Optimization: Incorporate relevant keywords naturally throughout the blog post to improve search engine visibility.    - Call to Action: Include a clear and compelling call to action at the end of the blog post to encourage reader engagement (e.g., \"leave a comment\", \"subscribe to the newsletter\", \"visit a related website\").    - Visual Appeal: Consider incorporating relevant images, infographics, or videos to enhance visual appeal and break up the text.Demonstrate your expertise in blog writing by creating a high-quality, informative, and engaging piece that effectively educates and entertains your target audience.",
+        "category": "fun"
+    }
+]
