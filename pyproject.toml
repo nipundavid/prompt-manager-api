@@ -8,3 +8,5 @@ dependencies = [
     "fastapi[standard]>=0.115.0",
     "uvicorn[standard]>=0.30.0",
 ]
+[tool.fastapi]         
+entrypoint = "app.main:app"

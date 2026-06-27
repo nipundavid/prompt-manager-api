@@ -2,8 +2,6 @@
 from fastapi import APIRouter, HTTPException, status
 router = APIRouter()
 
-
-
 @router.get("/", status_code=status.HTTP_200_OK)
 async def get_all_prompts():
     return [{"prompt_id": 1, "title": "Hello, World!"," content": "This is a sample prompt.", "category": "Sample"}]
