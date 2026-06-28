@@ -1,12 +1,6 @@
-class Prompt:
-    def __init__(self, title, content, category):
-        self.title = title
-        self.content = content
-        self.category = category
+from pydantic import BaseModel
 
-    def to_dict(self):
-        return {
-            "title": self.title,
-            "content": self.content,
-            "category": self.category
-        }
+class Prompt(BaseModel):
+    title: str
+    content: str
+    category: str
