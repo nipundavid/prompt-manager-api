@@ -19,3 +19,17 @@ https://{base_url}/prompt-manager/api/v1/docs/
 ### Get all prompts
 
 https://{base_url}/prompt-manager/api/v1/prompts/
+
+## Port related issues
+
+### Check occupied port
+
+```
+lsof -i {port}
+```
+
+### Kill process on occupied port
+
+```
+kill -9 {PID}
+```
