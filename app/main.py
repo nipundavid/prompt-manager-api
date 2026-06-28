@@ -1,5 +1,5 @@
 # app/main.py
-from fastapi import FastAPI
+from fastapi import FastAPI, status
 from app.routes.v1.router import router
 from app.constants import project
 from app.services.prompt_loader import load_prompts
@@ -9,15 +9,17 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def _load_prompts():
+def _load_prompts() -> list:
     prompts = load_prompts()
     logger.info(f"Loaded {len(prompts)} prompts.")
+    return prompts
 
 @asynccontextmanager
 async def lifespan_event(app: FastAPI):
     logger.info("Application startup")
-    _load_prompts()
+    app.state.prompts = _load_prompts()
     yield
+    app.state.prompts.clear()
     logger.info("Application shutdown")
 
 def create_application() -> FastAPI:
@@ -35,3 +37,7 @@ def create_application() -> FastAPI:
     return application
 
 app = create_application()
+
+@app.get("/", status_code=status.HTTP_200_OK)
+def health_check():
+    return {"status": "server is up and running..."}

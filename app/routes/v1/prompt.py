@@ -1,10 +1,13 @@
 # app/api/v1/endpoints/users.py
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Request
 router = APIRouter()
 
+def get_prompts_from_state(request: Request):
+    return request.app.state.prompts
+
 @router.get("/", status_code=status.HTTP_200_OK)
-async def get_all_prompts():
-    return [{"prompt_id": 1, "title": "Hello, World!"," content": "This is a sample prompt.", "category": "Sample"}]
+async def get_all_prompts(prompts:list = Depends(get_prompts_from_state)):
+    return prompts
 
 @router.get("/{prompt_id}")
 async def get_prompt(prompt_id: int):
